@@ -7,6 +7,7 @@
 
 import UIKit
 import Metal
+import Combine
 
 class ViewController: UIViewController {
 
@@ -22,17 +23,22 @@ class ViewController: UIViewController {
     var commandQueue: MTLCommandQueue!
     
     var timer: CADisplayLink!
+    var shouldRedrawFlag: Bool = true
+    var tickTimer : HPETimer = HPETimer()
     
     func render()
     {
+        if !shouldRedrawFlag{
+            return
+        }
         guard let drawable = metalLayer?.nextDrawable() else {return}
         let renderPassDescriptor = MTLRenderPassDescriptor()
         renderPassDescriptor.colorAttachments[0].texture = drawable.texture
         renderPassDescriptor.colorAttachments[0].loadAction = .clear
         renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(
             red:0.0,
-            green: 0.0,
-            blue:0.0,
+            green: 128/256,
+            blue:128/256,
             alpha:1.0
         )
         
@@ -48,14 +54,22 @@ class ViewController: UIViewController {
         
         commandBuffer?.present(drawable)
         commandBuffer?.commit()
+        shouldRedrawFlag = false
         
     }
+
     @objc func gameloop()
     {
         autoreleasepool()
         {
+            print("\(round(1 / (timer.targetTimestamp - timer.timestamp))) FPS")
             self.render()
+            
         }
+    }
+    func executeOnTick()
+    {
+        print("Tick")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,8 +105,11 @@ class ViewController: UIViewController {
         
         timer = CADisplayLink(target: self, selector: #selector(gameloop))
         timer.add(to: RunLoop.main, forMode: .default)
+        tickTimer.setCallback {
+            self.executeOnTick()
+        }
+        tickTimer.start()
+
     }
-
-
 }
 

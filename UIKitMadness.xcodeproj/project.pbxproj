@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F447646529CB175B000C9795 /* shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = F447646429CB175B000C9795 /* shader.metal */; };
+		F4949F5829D15C8E008FC234 /* HPET.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4949F5729D15C8E008FC234 /* HPET.swift */; };
+		F4949F5A29D16461008FC234 /* HPETShim.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4949F5929D16461008FC234 /* HPETShim.swift */; };
 		F49ECBA129B8AC3400A5C426 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49ECBA029B8AC3400A5C426 /* AppDelegate.swift */; };
 		F49ECBA329B8AC3400A5C426 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49ECBA229B8AC3400A5C426 /* SceneDelegate.swift */; };
 		F49ECBA529B8AC3400A5C426 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49ECBA429B8AC3400A5C426 /* ViewController.swift */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		F447646429CB175B000C9795 /* shader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = shader.metal; sourceTree = "<group>"; };
+		F4949F5729D15C8E008FC234 /* HPET.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPET.swift; sourceTree = "<group>"; };
+		F4949F5929D16461008FC234 /* HPETShim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPETShim.swift; sourceTree = "<group>"; };
 		F49ECB9D29B8AC3400A5C426 /* UIKitMadness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitMadness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F49ECBA029B8AC3400A5C426 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F49ECBA229B8AC3400A5C426 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,11 +65,13 @@
 				F49ECBA029B8AC3400A5C426 /* AppDelegate.swift */,
 				F49ECBA229B8AC3400A5C426 /* SceneDelegate.swift */,
 				F49ECBA429B8AC3400A5C426 /* ViewController.swift */,
+				F4949F5729D15C8E008FC234 /* HPET.swift */,
 				F447646429CB175B000C9795 /* shader.metal */,
 				F49ECBA629B8AC3400A5C426 /* Main.storyboard */,
 				F49ECBA929B8AC3500A5C426 /* Assets.xcassets */,
 				F49ECBAB29B8AC3500A5C426 /* LaunchScreen.storyboard */,
 				F49ECBAE29B8AC3500A5C426 /* Info.plist */,
+				F4949F5929D16461008FC234 /* HPETShim.swift */,
 			);
 			path = UIKitMadness;
 			sourceTree = "<group>";
@@ -142,6 +148,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F447646529CB175B000C9795 /* shader.metal in Sources */,
+				F4949F5A29D16461008FC234 /* HPETShim.swift in Sources */,
+				F4949F5829D15C8E008FC234 /* HPET.swift in Sources */,
 				F49ECBA529B8AC3400A5C426 /* ViewController.swift in Sources */,
 				F49ECBA129B8AC3400A5C426 /* AppDelegate.swift in Sources */,
 				F49ECBA329B8AC3400A5C426 /* SceneDelegate.swift in Sources */,
