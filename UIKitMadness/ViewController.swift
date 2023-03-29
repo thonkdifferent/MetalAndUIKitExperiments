@@ -15,9 +15,13 @@ class ViewController: UIViewController {
     var metalLayer: CAMetalLayer!
     var vertexBuffer: MTLBuffer!
     let vertexData: [Float] = [
-        0.0,1.0,0.0,
-        -1.0,-1.0,0.0,
-        1.0,-1.0,0.0
+        0.0,0.5,0.0,
+        0.0,0.0,0.0,
+        0.5,0.0,0.0,
+        0.5,0.0,0.0,
+        0.5,0.5,0.0,
+        0.0,0.5,0.0
+        
     ]
     var pipelineState: MTLRenderPipelineState!
     var commandQueue: MTLCommandQueue!
@@ -26,6 +30,11 @@ class ViewController: UIViewController {
     var shouldRedrawFlag: Bool = true
     var tickTimer : HPETimer = HPETimer()
     
+    
+    func normalize() -> Double
+    {
+        return 0.0
+    }
     func render()
     {
         if !shouldRedrawFlag{
@@ -50,6 +59,7 @@ class ViewController: UIViewController {
         renderEncoder.setRenderPipelineState(pipelineState)
         renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
         renderEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 3,instanceCount: 1)
+        renderEncoder.drawPrimitives(type:.triangle, vertexStart: 3, vertexCount: 3, instanceCount: 1)
         renderEncoder.endEncoding()
         
         commandBuffer?.present(drawable)
