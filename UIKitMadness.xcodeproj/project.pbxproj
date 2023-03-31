@@ -10,6 +10,9 @@
 		F447646529CB175B000C9795 /* shader.metal in Sources */ = {isa = PBXBuildFile; fileRef = F447646429CB175B000C9795 /* shader.metal */; };
 		F4949F5829D15C8E008FC234 /* HPET.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4949F5729D15C8E008FC234 /* HPET.swift */; };
 		F4949F5A29D16461008FC234 /* HPETShim.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4949F5929D16461008FC234 /* HPETShim.swift */; };
+		F49D15BD29D6E7A400D732C9 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49D15BC29D6E7A400D732C9 /* Utility.swift */; };
+		F49D15BF29D748DE00D732C9 /* compute.metal in Sources */ = {isa = PBXBuildFile; fileRef = F49D15BE29D748DE00D732C9 /* compute.metal */; };
+		F49D15C129D74A6700D732C9 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49D15C029D74A6700D732C9 /* Renderer.swift */; };
 		F49ECBA129B8AC3400A5C426 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49ECBA029B8AC3400A5C426 /* AppDelegate.swift */; };
 		F49ECBA329B8AC3400A5C426 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49ECBA229B8AC3400A5C426 /* SceneDelegate.swift */; };
 		F49ECBA529B8AC3400A5C426 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49ECBA429B8AC3400A5C426 /* ViewController.swift */; };
@@ -22,6 +25,9 @@
 		F447646429CB175B000C9795 /* shader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = shader.metal; sourceTree = "<group>"; };
 		F4949F5729D15C8E008FC234 /* HPET.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPET.swift; sourceTree = "<group>"; };
 		F4949F5929D16461008FC234 /* HPETShim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPETShim.swift; sourceTree = "<group>"; };
+		F49D15BC29D6E7A400D732C9 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		F49D15BE29D748DE00D732C9 /* compute.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = compute.metal; sourceTree = "<group>"; };
+		F49D15C029D74A6700D732C9 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		F49ECB9D29B8AC3400A5C426 /* UIKitMadness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitMadness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F49ECBA029B8AC3400A5C426 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F49ECBA229B8AC3400A5C426 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +52,7 @@
 		F49ECB9429B8AC3400A5C426 = {
 			isa = PBXGroup;
 			children = (
+				F49D15BE29D748DE00D732C9 /* compute.metal */,
 				F49ECB9F29B8AC3400A5C426 /* UIKitMadness */,
 				F49ECB9E29B8AC3400A5C426 /* Products */,
 			);
@@ -72,6 +79,8 @@
 				F49ECBAB29B8AC3500A5C426 /* LaunchScreen.storyboard */,
 				F49ECBAE29B8AC3500A5C426 /* Info.plist */,
 				F4949F5929D16461008FC234 /* HPETShim.swift */,
+				F49D15BC29D6E7A400D732C9 /* Utility.swift */,
+				F49D15C029D74A6700D732C9 /* Renderer.swift */,
 			);
 			path = UIKitMadness;
 			sourceTree = "<group>";
@@ -147,11 +156,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F49D15BD29D6E7A400D732C9 /* Utility.swift in Sources */,
 				F447646529CB175B000C9795 /* shader.metal in Sources */,
 				F4949F5A29D16461008FC234 /* HPETShim.swift in Sources */,
+				F49D15BF29D748DE00D732C9 /* compute.metal in Sources */,
 				F4949F5829D15C8E008FC234 /* HPET.swift in Sources */,
 				F49ECBA529B8AC3400A5C426 /* ViewController.swift in Sources */,
 				F49ECBA129B8AC3400A5C426 /* AppDelegate.swift in Sources */,
+				F49D15C129D74A6700D732C9 /* Renderer.swift in Sources */,
 				F49ECBA329B8AC3400A5C426 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
