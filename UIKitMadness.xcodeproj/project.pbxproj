@@ -52,7 +52,6 @@
 		F49ECB9429B8AC3400A5C426 = {
 			isa = PBXGroup;
 			children = (
-				F49D15BE29D748DE00D732C9 /* compute.metal */,
 				F49ECB9F29B8AC3400A5C426 /* UIKitMadness */,
 				F49ECB9E29B8AC3400A5C426 /* Products */,
 			);
@@ -73,6 +72,7 @@
 				F49ECBA229B8AC3400A5C426 /* SceneDelegate.swift */,
 				F49ECBA429B8AC3400A5C426 /* ViewController.swift */,
 				F4949F5729D15C8E008FC234 /* HPET.swift */,
+				F49D15BE29D748DE00D732C9 /* compute.metal */,
 				F447646429CB175B000C9795 /* shader.metal */,
 				F49ECBA629B8AC3400A5C426 /* Main.storyboard */,
 				F49ECBA929B8AC3500A5C426 /* Assets.xcassets */,

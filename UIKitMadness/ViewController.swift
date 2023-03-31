@@ -12,11 +12,12 @@ class ViewController: UIViewController {
     var tickTimer : HPETimer = HPETimer()
     func executeOnTick()
     {
-        print("Tick")
+       // print("Tick")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         renderer.initialize(boundToSurface: view.layer)
+        renderer.start_compute()
         renderer.start()
         tickTimer.setCallback {
             self.executeOnTick()
