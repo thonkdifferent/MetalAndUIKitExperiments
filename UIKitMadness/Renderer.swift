@@ -14,11 +14,11 @@ class Renderer
     private var device: MTLDevice!
     private var metalLayer: CAMetalLayer!
     private var vertexBuffer: MTLBuffer!
-    var vertexData: [Float] = [
-    
-        0.5,0.0,0.0,
-        0.0,0.5,0.0,
-        0.0,0.3,0.0
+    let vertexData: [Float] = [
+        //    x     y       r    g    b    a
+            -0.8,  0.4,    1.0, 0.0, 1.0, 1.0,
+             0.4, -0.8,    0.0, 1.0, 1.0, 1.0,
+             0.8,  0.8,    1.0, 1.0, 0.0, 1.0,
     ]
     private var pipelineState: MTLRenderPipelineState!
     private var commandQueue: MTLCommandQueue!
@@ -111,6 +111,18 @@ class Renderer
         pipelineStateDescriptior.fragmentFunction = fragmentProgram
         pipelineStateDescriptior.colorAttachments[0].pixelFormat = .bgra8Unorm
         
+        let vertexDescriptor = MTLVertexDescriptor()
+        vertexDescriptor.attributes[0].format = .float2
+        vertexDescriptor.attributes[0].offset = 0
+        vertexDescriptor.attributes[0].bufferIndex = 0
+        
+        vertexDescriptor.attributes[1].format = .float4
+        vertexDescriptor.attributes[1].offset = MemoryLayout<Float>.size * 2
+        vertexDescriptor.attributes[1].bufferIndex = 0
+        vertexDescriptor.layouts[0].stride = MemoryLayout<Float>.stride * 6
+        
+        pipelineStateDescriptior.vertexDescriptor = vertexDescriptor
+        
         pipelineState = try! device.makeRenderPipelineState(descriptor: pipelineStateDescriptior)
         
         commandQueue = device.makeCommandQueue()
@@ -137,12 +149,12 @@ class Renderer
             blue:128/256,
             alpha:1.0
         )
-        
         let commandBuffer = commandQueue.makeCommandBuffer()
         
         
         let renderEncoder = commandBuffer!.makeRenderCommandEncoder(descriptor: renderPassDescriptor)!
         
+
         renderEncoder.setRenderPipelineState(pipelineState)
         renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
         renderEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 3,instanceCount: 1)

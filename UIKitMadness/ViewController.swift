@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         renderer.initialize(boundToSurface: view.layer)
-        renderer.start_compute()
+        //renderer.start_compute()
         renderer.start()
         tickTimer.setCallback {
             self.executeOnTick()
